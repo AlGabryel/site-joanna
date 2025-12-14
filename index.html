@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dra. Joanna Loureiro | Estética Avançada</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dourado:#c9a24d;
+  --roxo:#883481;
+  --verde:#089e71;
+  --sombra-suave: 
+    0 30px 80px rgba(201,162,77,.15),
+    0 10px 30px rgba(0,0,0,.08);
+
+  --sombra-hover:
+    0 35px 90px rgba(201,162,77,.25),
+    0 15px 40px rgba(0,0,0,.12);
+}
+
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at left center, rgba(201,162,77,.12), transparent 55%),
+    radial-gradient(circle at right bottom, rgba(0,0,0,.08), transparent 60%),
+    #f7f4ec;
+}
+
+
+
+/* LAYOUT GERAL */
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* FOTO LADO ESQUERDO */
+.foto-lateral{
+  flex:1;
+  background:url('joanna.jpg') left center / 100% auto no-repeat;
+}
+
+/* ÁREA DOS BOTÕES (GLASS) */
+.conteudo{
+  flex:1;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201,162,77,.18),
+      rgba(255,255,255,.78) 45%,
+      rgba(255,255,255,.75)
+    );
+  backdrop-filter:blur(6px);
+  box-shadow:var(--sombra-suave);
+  backdrop-filter:blur(6px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:70px 70px 70px 50px;
+  box-shadow: var(--sombra-suave);
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(6px);
+  box-shadow:var(--sombra-suave);
+
+}
+
+/* TEXTOS */
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+h1 span{
+  color:var(--dourado);
+}
+
+p{
+  color:#666;
+  font-size:15px;
+  margin-bottom:35px;
+}
+
+/* BOTÕES */
+.btn{
+  display:block;
+  margin:14px 0;
+  padding:15px 0;
+  border-radius:40px;
+  border:1px solid var(--dourado);
+  text-decoration:none;
+  text-align:center;
+  color:var(--dourado);
+  font-weight:500;
+  transition:all .4s ease;
+}
+
+.btn:hover{
+  background:var(--dourado);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
+}
+
+
+
+/* MOBILE */
+@media(max-width:900px){
+  .layout{
+    flex-direction:column;
+  }
+
+  .foto-lateral{
+    height:360px;
+    background-position:center top;
+    background-size:contain;
+  }
+
+  .conteudo{
+    padding:45px 25px;
+  }
+}
+
+  .inst {
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--roxo);
+    text-decoration:none;
+    text-align:center;
+    color: rgb(116, 40, 93);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+
+  .wats {
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--verde);
+    text-decoration:none;
+    text-align:center;
+    color: rgb(32, 126, 110);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+
+  .inst:hover{
+  background:var(--roxo);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
+}
+
+.wats:hover{
+  background:var(--verde);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <div class="foto-lateral"></div>
+
+  <div class="conteudo">
+    <h1><span>Dra.</span> Joanna Loureiro</h1>
+    <p>Estética Avançada & Harmonização Facial</p>
+
+    <a class="btn" href="faciais.html">Procedimentos Faciais</a>
+    <a class="btn" href="corporais.html">Procedimentos Corporais</a>
+    <a class="btn" href="harmonizacao.html">Harmonização Facial</a>
+    <a class="wats" href="https://wa.me/5581993829018" target="_blank">Agendar pelo WhatsApp</a>
+    <a class="inst" href="http://www.instagram.com/joanna_loureiroo?igsh=MjhuNDgyMGtmeTZ1" target="_blank" rel="noopener noreferrer">@joanna_loureiroo</a>
+  </div>
+
+</div>
+
+</body>
+</html>
