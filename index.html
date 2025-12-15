@@ -229,6 +229,33 @@
 }
 
 
+
+.selos {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 6px;
+  color: #555;
+  flex-wrap: wrap;
+  opacity: 0.9;
+}
+
+.selos span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.selos span::first-letter {
+  color: #c9a24d;
+}
+
+
+
+
 @media(max-width:900px){
 
   /* remove imagem de fundo */
@@ -304,6 +331,14 @@
 
 }
 
+@media (max-width: 768px) {
+  .selos {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+
+
 
 
 
@@ -323,8 +358,15 @@
 
   <div class="conteudo">
     <img src="joanna.jpg" alt="Dra. Joanna Loureiro" class="foto-perfil">
-    <h1><span>Dra.</span> Joanna Loureiro</h1>
+    <h1><span>Dra.</span> Joanna Loureiro</h1> 
     <p>Estética Avançada & Harmonização Facial</p>
+    <div class="selos">
+      <span>✨ Naturalidade</span>
+      <span>🧬 Segurança</span>
+      <span>🤍 Atendimento personalizado</span>
+    </div>
+
+
 
     
 
