@@ -253,6 +253,31 @@
   color: #c9a24d;
 }
 
+.rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 30px 20px;
+  font-size: 13px;
+  color: #777;
+  flex-wrap: wrap; /* 🔑 isso resolve o mobile */
+}
+
+.rodape a {
+  color: #c9a24d;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.rodape a:hover {
+  opacity: 0.7;
+}
+
+.separador {
+  opacity: 0.5;
+}
+
 
 
 
@@ -391,7 +416,23 @@
     <a class="whatsapp-fixo" href="https://wa.me/5581993829018"
      target="_blank" aria-label="Agendar pelo WhatsApp">💬</a>
 
-     
+     <footer class="rodape">
+      <span>© Dra. Joanna Loureiro</span>
+      <span class="separador">•</span>
+      <span>Estética Avançada</span>
+      <span class="separador">•</span>
+
+      <a href="https://instagram.com/joanna_loureiroo" target="_blank">
+        Instagram
+      </a>
+      <span class="separador">•</span>
+
+      <a href="https://wa.me/5581993829018" target="_blank">
+        WhatsApp
+      </a>
+    </footer>
+
+
 
 
 </body>
