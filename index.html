@@ -22,7 +22,6 @@
       0 15px 40px rgba(0,0,0,.12);
   }
 
-  /* RESET */
   *{
     margin:0;
     padding:0;
@@ -47,26 +46,21 @@
     position: fixed;
     inset: 0;
     background: url('joanna.jpg') center/cover no-repeat;
-    opacity: 0.15;   /* desktop */
+    opacity: 0.15;
     z-index: -1;
   }
 
-
-
-  /* LAYOUT GERAL */
   .layout{ 
     display: flex;
     min-height: 100vh;
     overflow: hidden;
   }
 
-  /* FOTO LADO ESQUERDO */
   .foto-lateral{
     flex:1;
     background:url('joanna.jpg') left center / 100% auto no-repeat;
   }
 
-  /* ÁREA DOS BOTÕES (GLASS) */
   .conteudo{
     flex:1;
     background:
@@ -85,7 +79,6 @@
     max-height: 100vh;
   }
 
-  /* TEXTOS */
   h1{
     font-family:'Playfair Display',serif;
     font-size:34px;
@@ -102,7 +95,6 @@
     margin-bottom:35px;
   }
 
-  /* BOTÕES */
   .btn{
     display:block;
     margin:14px 0;
@@ -232,51 +224,27 @@
 
 .selos {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  margin-top: 6px;
+  font-size: 13px;
   color: #555;
+  margin-top: 6px;
   flex-wrap: wrap;
-  opacity: 0.9;
 }
 
 .selos span {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
+  position: relative;
+  padding-left: 10px;
 }
 
-.selos span::first-letter {
+.selos span::before {
+  content: "•";
+  position: absolute;
+  left: 0;
   color: #c9a24d;
 }
 
-.rodape {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 30px 20px;
-  font-size: 13px;
-  color: #777;
-  flex-wrap: wrap; /* 🔑 isso resolve o mobile */
-}
 
-.rodape a {
-  color: #c9a24d;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.rodape a:hover {
-  opacity: 0.7;
-}
-
-.separador {
-  opacity: 0.5;
-}
 
 
 
@@ -362,23 +330,11 @@
     overflow-x: auto;
   }
 }
-
-
-
-
-
-
 </style>
-
-
 </head>
-
 <body>
 
 <div class="layout">
-
-  
-
   <div class="foto-lateral"></div>
 
   <div class="conteudo">
@@ -386,9 +342,9 @@
     <h1><span>Dra.</span> Joanna Loureiro</h1> 
     <p>Estética Avançada & Harmonização Facial</p>
     <div class="selos">
-      <span>✨ Naturalidade</span>
-      <span>🧬 Segurança</span>
-      <span>🤍 Atendimento personalizado</span>
+      <span>Naturalidade</span>
+      <span>Segurança</span>
+      <span>Atendimento personalizado</span>
     </div>
 
 
@@ -415,24 +371,6 @@
 
     <a class="whatsapp-fixo" href="https://wa.me/5581993829018"
      target="_blank" aria-label="Agendar pelo WhatsApp">💬</a>
-
-     <footer class="rodape">
-      <span>© Dra. Joanna Loureiro</span>
-      <span class="separador">•</span>
-      <span>Estética Avançada</span>
-      <span class="separador">•</span>
-
-      <a href="https://instagram.com/joanna_loureiroo" target="_blank">
-        Instagram
-      </a>
-      <span class="separador">•</span>
-
-      <a href="https://wa.me/5581993829018" target="_blank">
-        WhatsApp
-      </a>
-    </footer>
-
-
 
 
 </body>
