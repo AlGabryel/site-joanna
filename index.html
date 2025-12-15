@@ -234,6 +234,10 @@
   /* remove imagem de fundo */
   .foto-lateral{
     display: none;
+    width: 100%;
+    height: 240px;
+    background-size: contain;
+    background-position: center top;
   }
 
   /* mantém o degradê elegante */
@@ -242,6 +246,8 @@
       radial-gradient(circle at left center, rgba(201,162,77,.12), transparent 55%),
       radial-gradient(circle at right bottom, rgba(0,0,0,.08), transparent 60%),
       #f7f4ec;
+      overflow: hidden;
+      overflow-y: auto;
   }
 
   body::before{
@@ -252,6 +258,8 @@
 
   .layout{
     flex-direction: column;
+    min-height: auto;
+    overflow: visible;
   }
 
   .foto-perfil{
@@ -272,11 +280,14 @@
     backdrop-filter: blur(6px);
     border-radius: 20px;
     text-align: center;
+    max-height: none;
+    padding: 25px 20px 35px;
   }
 }
 
   .localizacao {
     padding: 30px 20px;
+    margin-bottom: 10px;
   }
 
   .mapa iframe {
