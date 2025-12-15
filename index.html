@@ -9,161 +9,225 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --dourado:#c9a24d;
-  --roxo:#883481;
-  --verde:#089e71;
-  --sombra-suave: 
-    0 30px 80px rgba(201,162,77,.15),
-    0 10px 30px rgba(0,0,0,.08);
+  :root{
+    --dourado:#c9a24d;
+    --roxo:#883481;
+    --verde:#089e71;
+    --sombra-suave: 
+      0 30px 80px rgba(201,162,77,.15),
+      0 10px 30px rgba(0,0,0,.08);
 
-  --sombra-hover:
-    0 35px 90px rgba(201,162,77,.25),
-    0 15px 40px rgba(0,0,0,.12);
-}
+    --sombra-hover:
+      0 35px 90px rgba(201,162,77,.25),
+      0 15px 40px rgba(0,0,0,.12);
+  }
 
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  /* RESET */
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  min-height:100vh;
-  margin:0;
-  background: linear-gradient(
-    to bottom,
-    #f5efe6,
-    #efe4d6
-  );
-  position: relative;
-  overflow-x: hidden;
-}
-
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background: url('joanna.jpg') center/cover no-repeat;
-  opacity: 0.15;   /* desktop */
-  z-index: -1;
-}
-
-
-
-/* LAYOUT GERAL */
-.layout{
-  display:flex;
-  min-height:100vh;
-}
-
-/* FOTO LADO ESQUERDO */
-.foto-lateral{
-  flex:1;
-  background:url('joanna.jpg') left center / 100% auto no-repeat;
-}
-
-/* ÁREA DOS BOTÕES (GLASS) */
-.conteudo{
-  flex:1;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(201,162,77,.18),
-      rgba(255,255,255,.78) 45%,
-      rgba(255,255,255,.75)
+  body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    margin:0;
+    background: linear-gradient(
+      to bottom,
+      #f5efe6,
+      #efe4d6
     );
-  backdrop-filter:blur(6px);
-  box-shadow:var(--sombra-suave);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:70px 70px 70px 50px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: url('joanna.jpg') center/cover no-repeat;
+    opacity: 0.15;   /* desktop */
+    z-index: -1;
+  }
+
+
+
+  /* LAYOUT GERAL */
+  .layout{ 
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* FOTO LADO ESQUERDO */
+  .foto-lateral{
+    flex:1;
+    background:url('joanna.jpg') left center / 100% auto no-repeat;
+  }
+
+  /* ÁREA DOS BOTÕES (GLASS) */
+  .conteudo{
+    flex:1;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(201,162,77,.18),
+        rgba(255,255,255,.78) 45%,
+        rgba(255,255,255,.75)
+      );
+    backdrop-filter:blur(6px);
+    box-shadow:var(--sombra-suave);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 40px 50px;
+    max-height: 100vh;
+  }
+
+  /* TEXTOS */
+  h1{
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+    margin-bottom:10px;
+  }
+
+  h1 span{
+    color:var(--dourado);
+  }
+
+  p{
+    color:#666;
+    font-size:15px;
+    margin-bottom:35px;
+  }
+
+  /* BOTÕES */
+  .btn{
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--dourado);
+    text-decoration:none;
+    text-align:center;
+    color:var(--dourado);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+
+  .btn:hover{
+    background:var(--dourado);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+
+  .inst {
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--roxo);
+    text-decoration:none;
+    text-align:center;
+    color: rgb(116, 40, 93);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+
+  .wats {
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--verde);
+    text-decoration:none;
+    text-align:center;
+    color: rgb(32, 126, 110);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+
+  .inst:hover{
+    background:var(--roxo);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+
+  .wats:hover{
+    background:var(--verde);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+
+  .foto-perfil{
+    display: none;
+  }
+
+  .whatsapp-fixo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* TEXTOS */
-h1{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-  margin-bottom:10px;
+.whatsapp-fixo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 
-h1 span{
-  color:var(--dourado);
+.localizacao {
+  margin-top: 18px;
+  max-width: 900px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,.06);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  text-align: center;
 }
 
-p{
-  color:#666;
-  font-size:15px;
-  margin-bottom:35px;
+.localizacao h1 {
+  font-size: 23px;
+  margin: 4px 0;
+  margin-bottom: 4px;
+  color: #c9a24d;
 }
 
-/* BOTÕES */
-.btn{
-  display:block;
-  margin:14px 0;
-  padding:15px 0;
-  border-radius:40px;
-  border:1px solid var(--dourado);
-  text-decoration:none;
-  text-align:center;
-  color:var(--dourado);
-  font-weight:500;
-  transition:all .4s ease;
+.localizacao p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
 }
 
-.btn:hover{
-  background:var(--dourado);
-  color:#fff;
-  transform:translateY(-3px);
-  box-shadow:var(--sombra-hover);
+.mapa {
+  margin-top: 25px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.inst {
-  display:block;
-  margin:14px 0;
-  padding:15px 0;
-  border-radius:40px;
-  border:1px solid var(--roxo);
-  text-decoration:none;
-  text-align:center;
-  color: rgb(116, 40, 93);
-  font-weight:500;
-  transition:all .4s ease;
+.mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
 }
 
-.wats {
-  display:block;
-  margin:14px 0;
-  padding:15px 0;
-  border-radius:40px;
-  border:1px solid var(--verde);
-  text-decoration:none;
-  text-align:center;
-  color: rgb(32, 126, 110);
-  font-weight:500;
-  transition:all .4s ease;
-}
-
-.inst:hover{
-  background:var(--roxo);
-  color:#fff;
-  transform:translateY(-3px);
-  box-shadow:var(--sombra-hover);
-}
-
-.wats:hover{
-  background:var(--verde);
-  color:#fff;
-  transform:translateY(-3px);
-  box-shadow:var(--sombra-hover);
-}
-
-.foto-perfil{
-  display: none;
-}
 
 @media(max-width:900px){
 
@@ -211,14 +275,27 @@ p{
   }
 }
 
+  .localizacao {
+    padding: 30px 20px;
+  }
+
+  .mapa iframe {
+    height: 220px;
+  }
+
+
 
 
 </style>
+
+
 </head>
 
 <body>
 
 <div class="layout">
+
+  
 
   <div class="foto-lateral"></div>
 
@@ -227,14 +304,31 @@ p{
     <h1><span>Dra.</span> Joanna Loureiro</h1>
     <p>Estética Avançada & Harmonização Facial</p>
 
+    
+
     <a class="btn" href="faciais.html">Procedimentos Faciais</a>
     <a class="btn" href="corporais.html">Procedimentos Corporais</a>
     <a class="btn" href="harmonizacao.html">Harmonização Facial</a>
     <a class="wats" href="https://wa.me/5581993829018" target="_blank">Agendar pelo WhatsApp</a>
     <a class="inst" href="http://www.instagram.com/joanna_loureiroo?igsh=MjhuNDgyMGtmeTZ1" target="_blank" rel="noopener noreferrer">@joanna_loureiroo</a>
+    <section class="localizacao">
+      <h1>Atendimento</h1>
+
+      <p>
+        Policlininca Palmares<br />
+        <strong>Palmares / Rua Luzia Pedrosa</strong>
+      </p>
+
+    </section>
   </div>
 
 </div>
+
+    <a class="whatsapp-fixo" href="https://wa.me/5581993829018"
+     target="_blank" aria-label="Agendar pelo WhatsApp">💬</a>
+
+     
+
 
 </body>
 </html>
