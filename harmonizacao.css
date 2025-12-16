@@ -1,0 +1,138 @@
+:root{
+    --bege:#f5efe6;
+    --dourado:#c9a24d;
+    --glass:rgba(255,255,255,0.85); 
+  }
+
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+
+  body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    background:var(--bege);
+    position: relative;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url('joanna.jpg') center/cover no-repeat;
+    filter:blur(18px);
+    opacity:0.35;
+    z-index:-1;
+  }
+
+  section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:40px 30px;
+    border-radius:30px;
+    background:var(--glass);
+    backdrop-filter:blur(6px);
+    animation:fadeUp .8s ease;
+  }
+
+  h2{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    margin-bottom:50px;
+  }
+
+  .proc-title{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:.5px;
+    color:#3b3b3b;
+    margin-bottom:18px;
+    position:relative;
+  }
+
+  .proc-title::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:2px;
+    margin:12px auto 0;
+    background:linear-gradient(90deg,transparent,#c9a24d,transparent);
+    opacity:.8;
+  }
+
+  .proc{
+    text-align:center;
+    margin-bottom:90px;
+  }
+
+  .img{
+    height:500px;
+    margin-top:22px;
+    border-radius:22px;
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    border:2px solid rgba(201,162,77,.7); /* BORDA DOURADA */
+    background-color:rgba(255,255,255,.4); /* fundo caso a imagem não preencha */
+    transition:box-shadow .4s ease;
+  }
+
+  .voltar{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    padding:12px 26px;
+    border-radius:40px;
+    border:1px solid var(--dourado);
+    background:rgba(255,255,255,.6);
+    color:var(--dourado);
+    text-decoration:none;
+    backdrop-filter:blur(6px);
+    transition:all .35s ease;
+    z-index:10;
+  }
+
+  .voltar:hover{
+    background:var(--dourado);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+  }
+
+  .whatsapp-fixo{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#1ebe5d);
+    color:#fff;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:999;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:none}
+  }
+
+  @media(max-width:900px){
+    section{
+      margin:40px 20px;
+      padding:30px 20px;
+      border-radius:20px;
+    }
+
+    .img{
+      height:300px;
+    }
+  }

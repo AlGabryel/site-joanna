@@ -1,0 +1,218 @@
+:root{
+    --dourado:#c9a24d;
+    --roxo:#883481;
+    --verde:#089e71;
+    --sombra-suave: 
+      0 30px 80px rgba(201,162,77,.15),
+      0 10px 30px rgba(0,0,0,.08);
+    --sombra-hover:
+      0 35px 90px rgba(201,162,77,.25),
+      0 15px 40px rgba(0,0,0,.12);
+  }
+  
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    background: linear-gradient(to bottom,#f5efe6,#efe4d6);
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    background: url('imgs/joanna.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: -1;
+  }
+  
+  .layout{ 
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .foto-lateral{
+    flex:1;
+    background:url('imgs/joanna.jpg') left center / 100% auto no-repeat;
+  }
+  
+  .conteudo{
+    flex:1;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(201,162,77,.18),
+        rgba(255,255,255,.78) 45%,
+        rgba(255,255,255,.75)
+      );
+    backdrop-filter:blur(6px);
+    box-shadow:var(--sombra-suave);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 40px 50px;
+  }
+  
+  .cabecalho{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  
+  h1{
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+  }
+  
+  h1 span{
+    color:var(--dourado);
+  }
+  
+  .frase{
+    font-size:14px;
+    color:#9c7c3b;
+    max-width:260px;
+    line-height:1.4;
+  }
+  
+  .descricao{
+    color:#666;
+    font-size:15px;
+    margin:12px 0 28px;
+  }
+  
+  .btn{
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    border:1px solid var(--dourado);
+    text-decoration:none;
+    text-align:center;
+    color:var(--dourado);
+    font-weight:500;
+    transition:all .4s ease;
+  }
+  
+  .btn:hover{
+    background:var(--dourado);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+  
+  .inst,.wats{
+    display:block;
+    margin:14px 0;
+    padding:15px 0;
+    border-radius:40px;
+    text-decoration:none;
+    text-align:center;
+    font-weight:500;
+    transition:all .4s ease;
+  }
+  
+  .inst{
+    border:1px solid var(--roxo);
+    color:rgb(116,40,93);
+  }
+  
+  .wats{
+    border:1px solid var(--verde);
+    color:rgb(32,126,110);
+  }
+  
+  .inst:hover{
+    background:var(--roxo);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+  
+  .wats:hover{
+    background:var(--verde);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:var(--sombra-hover);
+  }
+  
+  .foto-perfil{
+    display:none;
+  }
+  
+  .selos{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    font-size:10px;
+    margin:6px 0 18px;
+  }
+  
+  .selos span{
+    color:#555;
+  }
+  
+  .localizacao{
+    margin-top:18px;
+    padding:20px;
+    border-radius:24px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(8px);
+    text-align:center;
+  }
+  
+  .whatsapp-fixo{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#1ebe5d);
+    color:#fff;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:999;
+  }
+  
+  @media(max-width:900px){
+    .foto-lateral{display:none;}
+    .layout{flex-direction:column;}
+    .foto-perfil{
+      display:block;
+      width:200px;
+      height:200px;
+      margin:10px auto 20px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position: center 7%;
+      border:2px solid var(--dourado);
+      box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    }
+  
+    .conteudo{
+      padding:25px 20px 35px;
+      text-align:center;
+      border-radius:20px;
+    }
+  
+    .cabecalho{
+      flex-direction:column;
+      gap:8px;
+    }
+  
+    .frase{
+      max-width:100%;
+    }
+  }
