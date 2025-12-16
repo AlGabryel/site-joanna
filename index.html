@@ -9,382 +9,255 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --dourado:#c9a24d;
-    --roxo:#883481;
-    --verde:#089e71;
-    --sombra-suave: 
-      0 30px 80px rgba(201,162,77,.15),
-      0 10px 30px rgba(0,0,0,.08);
+:root{
+  --dourado:#c9a24d;
+  --roxo:#883481;
+  --verde:#089e71;
+  --sombra-suave: 
+    0 30px 80px rgba(201,162,77,.15),
+    0 10px 30px rgba(0,0,0,.08);
+  --sombra-hover:
+    0 35px 90px rgba(201,162,77,.25),
+    0 15px 40px rgba(0,0,0,.12);
+}
 
-    --sombra-hover:
-      0 35px 90px rgba(201,162,77,.25),
-      0 15px 40px rgba(0,0,0,.12);
-  }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
+body{
+  font-family:'Montserrat',sans-serif;
+  min-height:100vh;
+  background: linear-gradient(to bottom,#f5efe6,#efe4d6);
+  position: relative;
+  overflow-x: hidden;
+}
 
-  body{
-    font-family:'Montserrat',sans-serif;
-    min-height:100vh;
-    margin:0;
-    background: linear-gradient(
-      to bottom,
-      #f5efe6,
-      #efe4d6
-    );
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  body::before{
-    content:"";
-    position: fixed;
-    inset: 0;
-    background: url('joanna.jpg') center/cover no-repeat;
-    opacity: 0.15;
-    z-index: -1;
-  }
-
-  .layout{ 
-    display: flex;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-
-  .foto-lateral{
-    flex:1;
-    background:url('joanna.jpg') left center / 100% auto no-repeat;
-  }
-
-  .conteudo{
-    flex:1;
-    background:
-      linear-gradient(
-        135deg,
-        rgba(201,162,77,.18),
-        rgba(255,255,255,.78) 45%,
-        rgba(255,255,255,.75)
-      );
-    backdrop-filter:blur(6px);
-    box-shadow:var(--sombra-suave);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding: 40px 50px;
-    max-height: 100vh;
-  }
-
-  /* TEXTOS */
-  h1{
-    font-family:'Playfair Display',serif;
-    font-size:34px;
-    margin-bottom:10px;
-  }
-
-  h1 span{
-    color:var(--dourado);
-  }
-
-  p{
-    color:#666;
-    font-size:15px;
-    margin-bottom:35px;
-  }
-
-  /* BOTÕES */
-  .btn{
-    display:block;
-    margin:14px 0;
-    padding:15px 0;
-    border-radius:40px;
-    border:1px solid var(--dourado);
-    text-decoration:none;
-    text-align:center;
-    color:var(--dourado);
-    font-weight:500;
-    transition:all .4s ease;
-  }
-
-  .btn:hover{
-    background:var(--dourado);
-    color:#fff;
-    transform:translateY(-3px);
-    box-shadow:var(--sombra-hover);
-  }
-
-  .inst {
-    display:block;
-    margin:14px 0;
-    padding:15px 0;
-    border-radius:40px;
-    border:1px solid var(--roxo);
-    text-decoration:none;
-    text-align:center;
-    color: rgb(116, 40, 93);
-    font-weight:500;
-    transition:all .4s ease;
-  }
-
-  .wats {
-    display:block;
-    margin:14px 0;
-    padding:15px 0;
-    border-radius:40px;
-    border:1px solid var(--verde);
-    text-decoration:none;
-    text-align:center;
-    color: rgb(32, 126, 110);
-    font-weight:500;
-    transition:all .4s ease;
-  }
-
-  .inst:hover{
-    background:var(--roxo);
-    color:#fff;
-    transform:translateY(-3px);
-    box-shadow:var(--sombra-hover);
-  }
-
-  .wats:hover{
-    background:var(--verde);
-    color:#fff;
-    transform:translateY(-3px);
-    box-shadow:var(--sombra-hover);
-  }
-
-  .foto-perfil{
-    display: none;
-  }
-
-  .whatsapp-fixo {
+body::before{
+  content:"";
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #25d366, #1ebe5d);
-  color: #fff;
-  font-size: 28px;
-  border-radius: 50%;
+  inset: 0;
+  background: url('imgs/joanna.jpg') center/cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.layout{ 
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  z-index: 999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100vh;
 }
 
-.whatsapp-fixo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+.foto-lateral{
+  flex:1;
+  background:url('imgs/joanna.jpg') left center / 100% auto no-repeat;
 }
 
-.localizacao {
-  margin-top: 18px;
-  max-width: 900px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(0,0,0,.06);
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(8px);
-  border-radius: 24px;
-  text-align: center;
+.conteudo{
+  flex:1;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201,162,77,.18),
+      rgba(255,255,255,.78) 45%,
+      rgba(255,255,255,.75)
+    );
+  backdrop-filter:blur(6px);
+  box-shadow:var(--sombra-suave);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding: 40px 50px;
 }
 
-.localizacao h1 {
-  font-size: 23px;
-  margin: 4px 0;
-  margin-bottom: 4px;
-  color: #c9a24d;
+.cabecalho{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
-.localizacao p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 12px;
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
 }
 
-.mapa {
-  margin-top: 25px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+h1 span{
+  color:var(--dourado);
 }
 
-.mapa iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
+.frase{
+  font-size:14px;
+  color:#9c7c3b;
+  max-width:260px;
+  line-height:1.4;
 }
 
-
-
-.selos {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  margin-top: 6px;
-  color: #555;
-  flex-wrap: wrap;
-  opacity: 0.9;
+.descricao{
+  color:#666;
+  font-size:15px;
+  margin:12px 0 28px;
 }
 
-.selos span {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
+.btn{
+  display:block;
+  margin:14px 0;
+  padding:15px 0;
+  border-radius:40px;
+  border:1px solid var(--dourado);
+  text-decoration:none;
+  text-align:center;
+  color:var(--dourado);
+  font-weight:500;
+  transition:all .4s ease;
 }
 
-.selos span::first-letter {
-  color: #c9a24d;
+.btn:hover{
+  background:var(--dourado);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
 }
 
+.inst,.wats{
+  display:block;
+  margin:14px 0;
+  padding:15px 0;
+  border-radius:40px;
+  text-decoration:none;
+  text-align:center;
+  font-weight:500;
+  transition:all .4s ease;
+}
 
+.inst{
+  border:1px solid var(--roxo);
+  color:rgb(116,40,93);
+}
 
+.wats{
+  border:1px solid var(--verde);
+  color:rgb(32,126,110);
+}
+
+.inst:hover{
+  background:var(--roxo);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
+}
+
+.wats:hover{
+  background:var(--verde);
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow:var(--sombra-hover);
+}
+
+.foto-perfil{
+  display:none;
+}
+
+.selos{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  font-size:10px;
+  margin:6px 0 18px;
+}
+
+.selos span{
+  color:#555;
+}
+
+.localizacao{
+  margin-top:18px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(8px);
+  text-align:center;
+}
+
+.whatsapp-fixo{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#25d366,#1ebe5d);
+  color:#fff;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  z-index:999;
+}
 
 @media(max-width:900px){
-
-  /* remove imagem de fundo */
-  .foto-lateral{
-    display: none;
-    width: 100%;
-    height: 240px;
-    background-size: contain;
-    background-position: center top;
-  }
-
-  /* mantém o degradê elegante */
-  body{
-    background:
-      radial-gradient(circle at left center, rgba(201,162,77,.12), transparent 55%),
-      radial-gradient(circle at right bottom, rgba(0,0,0,.08), transparent 60%),
-      #f7f4ec;
-      overflow: hidden;
-      overflow-y: auto;
-  }
-
-  body::before{
-    opacity: 0.55; /* mobile */
-  }
-
-
-
-  .layout{
-    flex-direction: column;
-    min-height: auto;
-    overflow: visible;
-  }
-
+  .foto-lateral{display:none;}
+  .layout{flex-direction:column;}
   .foto-perfil{
-    display: block;
-    width: 200px;
-    height: 200px;
-    margin: 10px auto 20px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 15%;
-    border: 2px solid var(--dourado);
+    display:block;
+    width:200px;
+    height:200px;
+    margin:10px auto 20px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position: center 7%;
+    border:2px solid var(--dourado);
     box-shadow: 0 12px 30px rgba(0,0,0,.2);
   }
 
   .conteudo{
-    padding: 35px 20px;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(6px);
-    border-radius: 20px;
-    text-align: center;
-    max-height: none;
-    padding: 25px 20px 35px;
+    padding:25px 20px 35px;
+    text-align:center;
+    border-radius:20px;
+  }
+  .cabecalho{
+    flex-direction:column;
+    gap:8px;
+  }
+  .frase{
+    max-width:100%;
   }
 }
-
-  .localizacao {
-    padding: 30px 20px;
-    margin-bottom: 10px;
-  }
-
-  .mapa iframe {
-    height: 220px;
-  }
-
-  @media (max-width: 768px) {
-
-  .glass,
-  .conteudo,
-  .layout {
-    border-radius: 0 !important;
-  }
-
-}
-
-@media (max-width: 768px) {
-  .selos {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-}
-
-
-
-
-
-
 </style>
-
-
 </head>
 
 <body>
-
 <div class="layout">
-
-  
-
   <div class="foto-lateral"></div>
-
   <div class="conteudo">
-    <img src="joanna.jpg" alt="Dra. Joanna Loureiro" class="foto-perfil">
-    <h1><span>Dra.</span> Joanna Loureiro</h1> 
-    <p>Estética Avançada & Harmonização Facial</p>
+    <img src="imgs/joanna.jpg" alt="Dra. Joanna Loureiro" class="foto-perfil">
+    <div class="cabecalho">
+      <h1><span>Dra.</span> Joanna Loureiro</h1>
+      <p class="frase">Realce sua beleza com naturalidade e renove sua autoestima.</p>
+    </div>
+    <p class="descricao">Estética Avançada & Harmonização Facial</p>
+
     <div class="selos">
       <span>▪️ Naturalidade</span>
       <span>▪️ Segurança</span>
       <span>▪️ Atendimento personalizado</span>
     </div>
 
-
-
-    
-
     <a class="btn" href="faciais.html">Procedimentos Faciais</a>
     <a class="btn" href="corporais.html">Procedimentos Corporais</a>
     <a class="btn" href="harmonizacao.html">Harmonização Facial</a>
     <a class="wats" href="https://wa.me/5581993829018" target="_blank">Agendar pelo WhatsApp</a>
-    <a class="inst" href="http://www.instagram.com/joanna_loureiroo?igsh=MjhuNDgyMGtmeTZ1" target="_blank" rel="noopener noreferrer">@joanna_loureiroo</a>
+    <a class="inst" href="http://www.instagram.com/joanna_loureiroo" target="_blank">@joanna_loureiroo</a>
+
     <section class="localizacao">
       <h1>Atendimento</h1>
-
-      <p>
-        Policlininca Palmares<br />
-        <strong>Palmares / Rua Luzia Pedrosa</strong>
-      </p>
-
+      <p>Policlininca Palmares<br><strong>Palmares / Rua Luzia Pedrosa</strong></p>
     </section>
   </div>
-
 </div>
 
-    <a class="whatsapp-fixo" href="https://wa.me/5581993829018"
-     target="_blank" aria-label="Agendar pelo WhatsApp">💬</a>
-
-
+<a class="whatsapp-fixo" href="https://wa.me/5581993829018" target="_blank">💬</a>
 </body>
 </html>
